@@ -1,0 +1,275 @@
+  - name: "SMA EDMM10"
+    type: tcp
+    host: 192.168.3.249
+    port: 502
+    sensors:
+      - name: sma_edmm_accumulated_connected_power_of_the_PV_inverter
+        unit_of_measurement: W
+        state_class: measurement
+        slave: 2
+        address: 30233
+        count: 2
+        data_type: uint32
+        scan_interval: 60
+        # Comfirmed working
+
+      - name: sma_edmm_total_energy_fed_in_on_all_line_conductors
+        unit_of_measurement: Wh
+        state_class: measurement
+        slave: 2
+        address: 30513
+        count: 4
+        data_type: uint64
+        scan_interval: 60
+        # Comfirmed working (TOTAL PRODUCED)
+        
+
+      - name: sma_edmm_energy_fed_in_on_the_current_day_on_all_line_conductors
+        unit_of_measurement: Wh
+        state_class: measurement
+        slave: 2
+        address: 30517
+        count: 4
+        data_type: uint64
+        scan_interval: 60
+        ### Getting static? value '18446744073709551615' - Can't find in monitor
+
+      - name: sma_edmm_current_pv_feed_in_active_power_on_all_line_conducors
+        state_class: measurement
+        unit_of_measurement: W
+        slave: 2 
+        address: 30775
+        count: 2
+        data_type: int32
+        scan_interval: 60
+        # Comfirmed working - current production all conductors
+
+      - name: sma_edmm_reactive_power_on_all_line_conductors
+        state_class: measurement
+        unit_of_measurement: VA
+        slave: 2 
+        address: 30805
+        count: 2
+        data_type: int32
+        scan_interval: 60
+        # Comfirmed working
+
+      - name: sma_edmm_active_power_of_system_at_pcc
+        state_class: measurement
+        unit_of_measurement: W
+        slave: 2 
+        address: 31249
+        count: 2
+        data_type: int32
+        scan_interval: 60
+        ### Getting static? value of '-2147483648'
+
+      - name: sma_edmm_reactive_power_of_system_at_pcc
+        state_class: measurement
+        unit_of_measurement: var
+        slave: 2 
+        address: 31251
+        count: 2
+        data_type: int32
+        scan_interval: 60
+        ### Getting static? value of '-2147483648'
+
+      - name: sma_edmm_feed_in_of_power_into_grid_line1_at_pcc
+        state_class: measurement
+        unit_of_measurement: W
+        slave: 2 
+        address: 31503
+        count: 2
+        data_type: int32
+        scan_interval: 60
+        ### Getting static? value of '-2147483648'
+
+      - name: sma_edmm_feed_in_of_power_into_grid_line2_at_pcc
+        state_class: measurement
+        unit_of_measurement: W
+        slave: 2 
+        address: 31505
+        count: 2
+        data_type: int32
+        scan_interval: 60
+        ### Getting static? value of '-2147483648'
+
+      - name: sma_edmm_feed_in_of_power_into_grid_line3_at_pcc
+        state_class: measurement
+        unit_of_measurement: W
+        slave: 2 
+        address: 31507
+        count: 2
+        data_type: int32
+        scan_interval: 60
+        ### Getting static? value of '-2147483648'
+
+      - name: sma_edmm_feed_in_of_reactive_power_into_grid_line1_at_pcc
+        state_class: measurement
+        unit_of_measurement: var
+        slave: 2 
+        address: 31509
+        count: 2
+        data_type: int32
+        scan_interval: 60
+        ### Getting static? value of '-2147483648'
+
+      - name: sma_edmm_feed_in_of_reactive_power_into_grid_line2_at_pcc
+        state_class: measurement
+        unit_of_measurement: var
+        slave: 2 
+        address: 31511
+        count: 2
+        data_type: int32
+        scan_interval: 60
+        ### Getting static? value of '-2147483648'
+
+      - name: sma_edmm_feed_in_of_reactive_power_into_grid_line3_at_pcc
+        state_class: measurement
+        unit_of_measurement: var
+        slave: 2 
+        address: 31513
+        count: 2
+        data_type: int32
+        scan_interval: 60
+        ### Getting static? value of '-2147483648'
+
+      - name: sma_edmm_system_voltage_line1_at_pcc
+        state_class: measurement
+        unit_of_measurement: V
+        slave: 2 
+        address: 31529
+        count: 2
+        data_type: uint32
+        scan_interval: 60
+        # Comfirmed working
+
+      - name: sma_edmm_system_voltage_line2_at_pcc
+        state_class: measurement
+        unit_of_measurement: V
+        slave: 2 
+        address: 31531
+        count: 2
+        data_type: uint32
+        scan_interval: 60
+        # Comfirmed working
+
+      - name: sma_edmm_system_voltage_line3_at_pcc
+        state_class: measurement
+        unit_of_measurement: V
+        slave: 2 
+        address: 31533
+        count: 2
+        data_type: uint32
+        scan_interval: 60
+        # Comfirmed working
+
+     - name: sma_edmm_system_current_line1_at_pcc
+        state_class: measurement
+        unit_of_measurement: A
+        slave: 2 
+        address: 31535
+        count: 2
+        data_type: int32
+        scan_interval: 60
+        ### Getting static? value of '-2147483648'
+
+      - name: sma_edmm_system_current_line2_at_pcc
+        state_class: measurement
+        unit_of_measurement: A
+        slave: 2 
+        address: 31537
+        count: 2
+        data_type: int32
+        scan_interval: 60
+        ### Getting static? value of '-2147483648'
+
+      - name: sma_edmm_system_current_line3_at_pcc
+        state_class: measurement
+        unit_of_measurement: A
+        slave: 2 
+        address: 31539
+        count: 2
+        data_type: int32
+        scan_interval: 60
+        ### Getting static? value of '-2147483648'
+
+      # - name: sma_edmm_total_generated_power #Power value of the generating system when all generating units are in operation, in W
+      #   state_class: measurement
+      #   unit_of_measurement: W
+      #   slave: 2 
+      #   address: 31545
+      #   count: 2
+      #   data_type: uint32
+      #   scan_interval: 60
+      #   ### Reports 'unavailable' (Gives exception Pymodbus: SMA EDMM10: Exception Response(131, 3, SlaveFailure))
+
+      - name: sma_edmm_available_active_power_all_inverters #Available active power of all inverters, in W
+        state_class: measurement
+        unit_of_measurement: W
+        slave: 2 
+        address: 31547
+        count: 2
+        data_type: uint32
+        scan_interval: 60
+        # Comfirmed working
+
+      - name: sma_edmm_available_underexcited_reactive_power
+        state_class: measurement
+        unit_of_measurement: var
+        slave: 2 
+        address: 32187
+        count: 2
+        data_type: int32
+        scan_interval: 60
+        # Comfirmed working
+
+      - name: sma_edmm_available_overexcited_reactive_power
+        state_class: measurement
+        unit_of_measurement: var
+        slave: 2 
+        address: 32189
+        count: 2
+        data_type: int32
+        scan_interval: 60
+        # Comfirmed working
+
+      - name: sma_edmm_availability_of_generating_system
+        state_class: measurement
+        unit_of_measurement: '%'
+        slave: 2 
+        address: 32193
+        count: 2
+        data_type: uint32
+        scan_interval: 60
+        # Comfirmed working
+
+      - name: sma_edmm_ambient_temp
+        state_class: measurement
+        unit_of_measurement: °C
+        slave: 2 
+        address: 34609
+        count: 2
+        data_type: int32
+        scan_interval: 60
+        ### Getting static? value of '-2147483648' - seems to be sat-data
+
+      - name: sma_edmm_global_wind_speed
+        state_class: measurement
+        unit_of_measurement: m/s
+        slave: 2 
+        address: 34615
+        count: 2
+        data_type: uint32
+        scan_interval: 60
+        ### Getting static? value of '4294967295' - seems to be sat-data
+
+      - name: sma_edmm_pv_module_temp
+        state_class: measurement
+        unit_of_measurement: °C
+        slave: 2 
+        address: 34621
+        count: 2
+        data_type: int32
+        scan_interval: 60
+        ### Getting static? value of '-2147483648'
